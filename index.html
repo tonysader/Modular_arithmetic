@@ -40,8 +40,8 @@
     </tbody>
   </table>
   <h3 class="d-none gcdRes"> GCD is: <span id="gcd"> </span></h3>
-</div>
 <hr>
+
 <form >
  <h2>Euler's phi</h2>
 <div class="row">
@@ -58,6 +58,7 @@
 </form>
 
   <h3> EulersPhi(<span id="eVal"> </span>) =  <span id="eulerResultLength"> </span> Because the numbers are <span id="eulerResult"> </span> </h3>
+</div>
 </div>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -85,7 +86,7 @@ let extended_euclidean = function(a,b){
 let gcd = function(a,b){
 	if(b==0)
 		return a;
-	else return euclid(b,a%b);
+	else return gcd(b,a%b);
 }
 let prime_together = function(a,b){
 	if(gcd(a,b) == 1)
