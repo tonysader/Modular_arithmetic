@@ -7,7 +7,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
+	<meta name="description" content="    Extended Euclidean algorithm also refers to a very similar algorithm for computing the polynomial greatest common divisor and the coefficients of Bézout's identity of two univariate polynomials. The extended Euclidean algorithm is particularly useful when a and b are coprime.">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
 	<style> 
 		section{padding: 10px}
@@ -41,8 +41,9 @@
 
 <body>
 
-<div class="container">
 <section id="section1">
+
+<div class="container">
 	<div class="row">
 		<div class="col-12">
 			<h2 class="text-center">Prime numbers</h2>
@@ -52,9 +53,11 @@
 			</div>
 		</div>	
 	</div>
-
+</div>
 </section>
 <section id="section2">
+
+<div class="container">
 <div class="row">
 	<div class="col-12">
 		<h2 class="text-center">Extended euclid</h2>
@@ -100,9 +103,12 @@
     </tbody>
   </table>
   <h4 class=" gcdRes" > GCD is: <span id="gcd"> </span></h4>
+	</div>
 </section>
 
 <section id="section3">
+
+<div class="container">
 <div class="row">
 	<div class="col-12">
 		<h2 class="text-center">Euler's phi</h2>
@@ -125,9 +131,12 @@
 		<h5> EulersPhi(<span id="eVal"> </span>) =  <span id="eulerResultLength"> </span> Because the numbers are <span id="eulerResult"> </span> </h5>
 	</div>
 </div>
+</div>
 </section>
 
 <section id="section4">
+
+<div class="container">
 <div class="row">
 	<div class="col-12">
 		<h2 class="text-center">Solve modular linear equations</h2>
@@ -146,12 +155,11 @@
 	<div class="col-12">
 	<h5 style="display:none" class="text-center equ_res_wrapper"> The results are: <span id="equations_results"> </span></h5 >
 </div></div>
+</div>
 </section>
 
-</div>
 
 
-</div>
 
   <script>
   let res = [];
@@ -191,7 +199,9 @@ let eulerPhi = function(a){
 }
 $(".gcdRes").hide();
 $("#calc").click(function(){
+	res = [];
 	$(".res").remove();
+	
 	extended_euclidean($("#a").val(),$("#b").val());
 	
 	for(let i=0;i <res.length;i++){
