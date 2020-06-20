@@ -1,31 +1,91 @@
+<head>
+  <title>Modular arithmetic</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
+	<style> 
+		section{padding: 10px}
+		#section1{ background-color:#4285f4}
+		#section2{background-color: #34a853}
+		#section3{background-color: #ff6d01}
+		#section4{background-color: #fbbc04}
+		#section5{}
+		#section6{}
+		label{
+		text-align:center;}
+		body{
+			color:white;
+		}
+		.flex-container {
+		  display: flex;
+		  flex-wrap: wrap;
+		  margin-top: 10px;
+		}
 
+		.flex-container > div {
+		  width: 50px;
+		  margin: 5px;
+		  text-align: center;
+		  line-height: 25px;
+		  font-size: 15px;
+		  border-right: 1px solid black;
+		}
+	</style>
+</head>
+
+<body>
 
 <div class="container">
+<section id="section1">
+	<div class="row">
+		<div class="col-12">
+			<h2 class="text-center">Prime numbers</h2>
+			<p class="text-center"> From <input min="2" type="number" style="display:inline; width:10%" class="form-control" placeholder="Start" id="prime_start"> To  <input type="number" style="display:inline; width:10%" class="form-control" placeholder="End" id="prime_end"> </p>
+			<center><button type="button" class="btn btn-dark text-center" id="show_prime">Show </button> </center>
+			<div class="flex-container primes_flex">
+			</div>
+		</div>	
+	</div>
 
-           
+</section>
+<section id="section2">
+<div class="row">
+	<div class="col-12">
+		<h2 class="text-center">Extended euclid</h2>
+	</div>	
+</div>
 
 <form >
- <h2>Extended euclid</h2>
+ 
 	<div class="row">
-	<div  class="col-md-6 col-12"> 
+	<div  class="col-md-4 col-6"> 
   <div class="form-group">
     <label for="a">A:</label>
     <input type="number" class="form-control" placeholder="Enter a" id="a">
   </div>
   </div>
   
-	<div  class="col-md-6 col-12">
+	<div  class="col-md-4 col-6">
   <div class="form-group">
     <label for="B">B:</label>
     <input type="number" class="form-control" placeholder="Enter B" id="b">
   </div>
   </div>
+  
+	<div class=" col-md-4 mt-5 col-12">
+		<button type="button" class="btn btn-dark text-center" id="calc">Show extended euclidean</button>
+	</div>	
   </div>
-  <button type="button" class="btn btn-primary" id="calc">Show extended euclidean</button>
+  
 </form>
 
-  <table class="table table-dark table-striped">
+  <table class="table table-light table-striped">
     <thead>
       <tr>
         <th>a</th>
@@ -39,13 +99,18 @@
     <tbody class="results">
     </tbody>
   </table>
-  <h3 class="d-none gcdRes"> GCD is: <span id="gcd"> </span></h3>
-<hr>
+  <h4 class=" gcdRes" > GCD is: <span id="gcd"> </span></h4>
+</section>
 
-<form >
- <h2>Euler's phi</h2>
+<section id="section3">
 <div class="row">
-	<div  class="col-md-6 col-12"> 
+	<div class="col-12">
+		<h2 class="text-center">Euler's phi</h2>
+	</div>	
+</div>
+<form >
+<div class="row">
+	<div  class="col-md-6 col-6"> 
   <div class="form-group">
     <label for="e">E:</label>
     <input type="number" class="form-control" placeholder="Enter e" id="e">
@@ -54,17 +119,40 @@
   
 	
   </div>
-  <button type="button" class="btn btn-primary" id="eul">Calculate Euler's phi</button>
 </form>
-
-  <h3> EulersPhi(<span id="eVal"> </span>) =  <span id="eulerResultLength"> </span> Because the numbers are <span id="eulerResult"> </span> </h3>
+<div class="row">
+	<div  class="col-md-6 col-6">
+		<h5> EulersPhi(<span id="eVal"> </span>) =  <span id="eulerResultLength"> </span> Because the numbers are <span id="eulerResult"> </span> </h5>
+	</div>
 </div>
+</section>
+
+<section id="section4">
+<div class="row">
+	<div class="col-12">
+		<h2 class="text-center">Solve modular linear equations</h2>
+	</div>	
+</div>
+<div class="row">
+	<div class="col-12">
+		<p class="text-center">  <input type="number" style="display:inline; width:10%" class="form-control" placeholder="Enter a" id="ax"> X <i class="fa fa-bars mr-1 ml-1"  aria-hidden="true"></i><input type="number" style="display:inline; width:10%" class="form-control" placeholder="Enter b" id="bx"> (mod <input style="display:inline; width:10%" type="number" class="form-control" placeholder="Enter n" id="nx">) </p>
+		<p class="text-center"> SOLVE <span id="axText"> </span>X <i class="fa fa-bars mr-1 ml-1" aria-hidden="true"></i> <span id="bxText"> </span> (mod <span id="nxText"> </span>) </p>
+	
+		<center><button type="button" class="btn btn-dark text-center" id="solve">Solve </button> </center>
+		
+	</div>	
+</div>
+<div class="row "> 
+	<div class="col-12">
+	<h5 style="display:none" class="text-center equ_res_wrapper"> The results are: <span id="equations_results"> </span></h5 >
+</div></div>
+</section>
+
 </div>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</div>
+
   <script>
   let res = [];
 let temp_res,_d,_x,_y,d,x,y;
@@ -101,17 +189,19 @@ let eulerPhi = function(a){
 	}
 	return res;
 }
+$(".gcdRes").hide();
 $("#calc").click(function(){
+	$(".res").remove();
 	extended_euclidean($("#a").val(),$("#b").val());
 	
 	for(let i=0;i <res.length;i++){
 
-	  let row = "<tr><td>" + res[i][0] +" </td><td>" + res[i][1] +" </td><td>" + res[i][2] +" </td><td>" + res[i][3] +" </td><td>" + res[i][4] +" </td><td>" + res[i][5] +" </td>  </tr>";
+	  let row = '<tr class="res"><td>' + res[i][0] +" </td><td>" + res[i][1] +" </td><td>" + res[i][2] +" </td><td>" + res[i][3] +" </td><td>" + res[i][4] +" </td><td>" + res[i][5] +" </td>  </tr>";
 		
 		
 		$(".results").prepend(row);
 	}
-	$("#gcd").html(gcd($("#a").val(),$("#b").val()));
+	$("#gcd").html("(" +res[res.length - 1][0] + " * " + res[res.length - 1][4] +  ") + (" +res[res.length - 1][1] + "*" + res[res.length - 1][5]+ ")  = " +  gcd($("#a").val(),$("#b").val()));
 	$(".gcdRes").show();
 	
 });
@@ -124,4 +214,92 @@ $("#e").keyup(function(){
 	$("#eulerResult").html(results.join(", "));
 })
 
+let ax,bx,nx;
+
+$("#ax").keyup(function(){
+	$("#axText").html($(this).val());
+	ax = $(this).val();
+})
+
+$("#bx").keyup(function(){
+	$("#bxText").html($(this).val());
+	bx = $(this).val();
+})
+$("#nx").keyup(function(){
+	$("#nxText").html($(this).val());
+	nx = $(this).val();
+})
+$("#solve").click(function(){
+	let a = ax;
+	let b = bx;
+	let n = nx;
+	let gcd_ext = extended_euclidean(a,n);
+	let d,x2,y2,x0;
+	let results = [];
+	d = gcd_ext[0]; x2 = gcd_ext[1]; y2 = gcd_ext[2];
+	
+	if(b%d == 0){
+		x0= (x2 * (b/d) ) % n;
+		for(let i=0;i< d-1;i++){
+			results.push((x0 + i*(n/d)) % n);
+		}
+	}
+	if(results.length==0){
+		$("#equations_results").html("No results");
+	}else{
+		$("#equations_results").html(results.join(", "));
+	}
+	$(".equ_res_wrapper").show();
+	
+})
+let is_prime = function(number){
+	 for (let i = 2; i < number; i++) {
+        if (number % i == 0 && i != number) return false;
+    }
+    return true;
+}
+$("#prime_start").val(2);
+$("#prime_end").val(50);
+let primes = [];
+for(let i=2; i<=50;i++){
+	if(is_prime(i)){
+		primes.push(i);
+	}
+}
+primes.forEach(function(item){
+	$(".primes_flex").append('<div class="prime_num"> ' +item+ "</div>");
+});
+
+$("#show_prime").click(function(){
+	$(".prime_num").remove();
+	primes = [];
+	let s = parseInt($("#prime_start").val());
+	let e = parseInt($("#prime_end").val());
+	
+	if(s < 2){
+		$("#prime_start").val(2);
+		s=2;
+	}
+		 
+
+	console.log(s);
+	console.log(e);
+
+	for(let i=s; i<=e;i++){
+		console.log(i);
+		if(is_prime(i)){
+			primes.push(i);
+		}
+	}
+		
+	primes.forEach(function(item){
+		$(".primes_flex").append('<div class="prime_num"> ' +item+ "</div>");
+	});
+	
+})
+//$("#prime_start").
+//		$("#prime_end").
+	//	$("#show_prime").
+		
   </script>
+</body>
