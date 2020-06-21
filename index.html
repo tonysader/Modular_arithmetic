@@ -40,11 +40,37 @@
 </head>
 
 <body>
-<h2 style="opacity:0">
+<h2 class="d-none" style="opacity:0">
 Modular arithmetic
 1- Find prime numbers: choose start and end then click show. 2- Solve Extended euclidean: extended GCD: Set A & B and it will show you a table with full results and details of the euclid, and show the GCD of the numbers, Greatest Common Divisor. Extended Euclidean algorithm also refers to a very similar algorithm for computing the polynomial greatest common divisor and the coefficients of Bézout's identity of two univariate polynomials. The extended Euclidean algorithm is particularly useful when a and b are coprime. The extended Euclidean algorithm. 3- Solve the Euler Phi Function, euler's phi, for positive integers, ϕ(n),Euler's totient function: Just set n and it will give you the results with the reason In number theory, Euler's totient function counts the positive integers up to a given integer n that are relatively prime to n. ϕ(n) is the number of non-negative integers less than n that are relatively prime to n. 4- Modular linear equations solver.Solve modular linear equations: Set some numbers to solve modular linear equations. Get results of modular linear equations. Modular linear equations.
 </h2>
+
 <section id="section1">
+
+<div class="container">
+<div class="row">
+	<div class="col-12">
+		<h2 class="text-center"> Modular linear equations Solver</h2>
+	</div>	
+</div>
+<div class="row">
+	<div class="col-12">
+		<p class="text-center">  <input type="number" style="display:inline; width:10%" class="form-control" placeholder="Enter a" id="ax"> X <i class="fa fa-bars mr-1 ml-1"  aria-hidden="true"></i><input type="number" style="display:inline; width:10%" class="form-control" placeholder="Enter b" id="bx"> (mod <input style="display:inline; width:10%" type="number" class="form-control" placeholder="Enter n" id="nx">) </p>
+		<p class="text-center"> SOLVE <span id="axText"> </span>X <i class="fa fa-bars mr-1 ml-1" aria-hidden="true"></i> <span id="bxText"> </span> (mod <span id="nxText"> </span>) </p>
+	
+		<center><button type="button" class="btn btn-dark text-center" id="solve">Solve </button> </center>
+		
+	</div>	
+</div>
+<div class="row "> 
+	<div class="col-12">
+	<h5 style="display:none" class="text-center equ_res_wrapper"> The results are: <span id="equations_results"> </span></h5 >
+</div></div>
+</div>
+</section>
+
+
+<section id="section2">
 
 <div class="container">
 	<div class="row">
@@ -58,7 +84,7 @@ Modular arithmetic
 	</div>
 </div>
 </section>
-<section id="section2">
+<section id="section3">
 
 <div class="container">
 <div class="row">
@@ -109,7 +135,7 @@ Modular arithmetic
 	</div>
 </section>
 
-<section id="section3">
+<section id="section4">
 
 <div class="container">
 <div class="row">
@@ -134,30 +160,6 @@ Modular arithmetic
 		<h5> EulersPhi(<span id="eVal"> </span>) =  <span id="eulerResultLength"> </span> Because the numbers are <span id="eulerResult"> </span> </h5>
 	</div>
 </div>
-</div>
-</section>
-
-<section id="section4">
-
-<div class="container">
-<div class="row">
-	<div class="col-12">
-		<h2 class="text-center">Solve modular linear equations</h2>
-	</div>	
-</div>
-<div class="row">
-	<div class="col-12">
-		<p class="text-center">  <input type="number" style="display:inline; width:10%" class="form-control" placeholder="Enter a" id="ax"> X <i class="fa fa-bars mr-1 ml-1"  aria-hidden="true"></i><input type="number" style="display:inline; width:10%" class="form-control" placeholder="Enter b" id="bx"> (mod <input style="display:inline; width:10%" type="number" class="form-control" placeholder="Enter n" id="nx">) </p>
-		<p class="text-center"> SOLVE <span id="axText"> </span>X <i class="fa fa-bars mr-1 ml-1" aria-hidden="true"></i> <span id="bxText"> </span> (mod <span id="nxText"> </span>) </p>
-	
-		<center><button type="button" class="btn btn-dark text-center" id="solve">Solve </button> </center>
-		
-	</div>	
-</div>
-<div class="row "> 
-	<div class="col-12">
-	<h5 style="display:none" class="text-center equ_res_wrapper"> The results are: <span id="equations_results"> </span></h5 >
-</div></div>
 </div>
 </section>
 
