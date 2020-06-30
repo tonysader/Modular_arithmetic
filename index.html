@@ -1,5 +1,5 @@
 <head>
-  <title>Modular Arithmetic Solver</title>
+  <title>Modular Arithmetic </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -38,6 +38,7 @@
 		}
 	</style>
 </head>
+
 
 <body>
 <h2 class="d-none" style="opacity:0">
@@ -255,6 +256,9 @@ $("#solve").click(function(){
 	
 	if(b%d == 0){
 		x0= (x2 * (b/d) ) % n;
+		while(x0 < 0){
+			x0 += n;
+		}
 		for(let i=0;i< d-1;i++){
 			results.push((x0 + i*(n/d)) % n);
 		}
