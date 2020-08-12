@@ -183,13 +183,14 @@ $("#show_prime").click(function(){
 })
 
 $("#show_powers").click(function(){
+  $(".td_pow").remove();
   let n = $("#power_n").val();
   let i = $("#power_i").val();
   $("#power_i_txt").html(i);
   $("#power_n_txt").html(n);
   for(let j =0;j<10;j++){
-      $("#pwr_row_1").append("<tr> " +j + " </td>");
-      $("#pwr_row_2").append("<tr> " +find_modulo(Math.pow(i,j) ,n) + " </td>");
+      $("#pwr_row_1").append('<td class="td_pow"> ' +j + " </td>");
+      $("#pwr_row_2").append('<td class="td_pow"> ' +find_modulo(Math.pow(i,j) ,n) + " </td>");
   }
 })
 
@@ -197,13 +198,15 @@ $("#show_powers").click(function(){
 //default power table
 let n_p = 7;
 let i_p = 3;
+$(".td_pow").remove();
+
 
 $("#power_i").val(i_p);
 $("#power_n").val(n_p);
 $("#power_i_txt").html(i_p);
 $("#power_n_txt").html(n_p);
 for(let j =0;j<10;j++){
-    $("#pwr_row_1").append("<td> " + j + " </td>");
-    $("#pwr_row_2").append("<td> " +find_modulo(Math.pow(i_p,j) ,n_p) + " </td>");
+    $("#pwr_row_1").append('<td class="td_pow"> ' + j + " </td>");
+    $("#pwr_row_2").append('<td class="td_pow"> ' +find_modulo(Math.pow(i_p,j) ,n_p) + " </td>");
 }
 });
