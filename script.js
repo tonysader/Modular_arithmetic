@@ -1,4 +1,4 @@
-
+$(document).ready(function(){
 let res = [];
 let temp_res,_d,_x,_y,d,x,y;
 let ax,bx,nx;
@@ -206,3 +206,4 @@ for(let j =0;j<10;j++){
     $("#pwr_row_1").append("<td> " + j + " </td>");
     $("#pwr_row_2").append("<td> " +find_modulo(Math.pow(i_p,j) ,n_p) + " </td>");
 }
+});
