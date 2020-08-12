@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <head>
   <title>Modular Arithmetic </title>
   <meta charset="utf-8">
@@ -7,14 +9,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
 	<meta name="description" content="   1- Find prime numbers: choose start and end then click show. 2- Solve Extended euclidean: extended GCD: Set A & B and it will show you a table with full results and details of the euclid, and show the GCD of the numbers, Greatest Common Divisor. Extended Euclidean algorithm also refers to a very similar algorithm for computing the polynomial greatest common divisor and the coefficients of Bézout's identity of two univariate polynomials. The extended Euclidean algorithm is particularly useful when a and b are coprime. The extended Euclidean algorithm. 3- Solve the Euler Phi Function, euler's phi, for positive integers, ϕ(n),Euler's totient function: Just set n and it will give you the results with the reason In number theory, Euler's totient function counts the positive integers up to a given integer n that are relatively prime to n. ϕ(n) is the number of non-negative integers less than n that are relatively prime to n. 4- Solve modular linear equations: Set some numbers to solve modular linear equations. Get results of modular linear equations. Modular linear equations.">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
-	<style> 
+	<style>
 		section{padding: 10px}
 		#section1{ background-color:#4285f4}
 		#section2{background-color: #34a853}
 		#section3{background-color: #ff6d01}
-		#section4{background-color: #fbbc04}
+		#section4,#section11{background-color: #fbbc04}
 		#section5{}
 		#section6{}
 		label{
@@ -80,7 +83,7 @@
       </div>
     </nav>
 <section style="margin-top: 35px;">
-<div class="container"> 
+<div class="container">
 <h2 class="d-none" style="opacity:0">
 Modular arithmetic
 1- Find prime numbers: choose start and end then click show. 2- Solve Extended euclidean: extended GCD: Set A & B and it will show you a table with full results and details of the euclid, and show the GCD of the numbers, Greatest Common Divisor. Extended Euclidean algorithm also refers to a very similar algorithm for computing the polynomial greatest common divisor and the coefficients of Bézout's identity of two univariate polynomials. The extended Euclidean algorithm is particularly useful when a and b are coprime. The extended Euclidean algorithm. 3- Solve the Euler Phi Function, euler's phi, for positive integers, ϕ(n),Euler's totient function: Just set n and it will give you the results with the reason In number theory, Euler's totient function counts the positive integers up to a given integer n that are relatively prime to n. ϕ(n) is the number of non-negative integers less than n that are relatively prime to n. 4- Modular linear equations solver.Solve modular linear equations: Set some numbers to solve modular linear equations. Get results of modular linear equations. Modular linear equations.
@@ -93,18 +96,54 @@ Modular arithmetic
 <div class="row">
 	<div class="col-12">
 		<h2 class="text-center"> Modular linear equations Solver</h2>
-	</div>	
+	</div>
 </div>
 <div class="row">
-	<div class="col-12">
-		<p class="text-center">  <input type="number" style="display:inline; width:10%" class="form-control" placeholder="Enter a" id="ax"> X <i class="fa fa-bars mr-1 ml-1"  aria-hidden="true"></i><input type="number" style="display:inline; width:10%" class="form-control" placeholder="Enter b" id="bx"> (mod <input style="display:inline; width:10%" type="number" class="form-control" placeholder="Enter n" id="nx">) </p>
+	<div class="col-12 col-md-9">
+		<p class="text-center">  <input type="number" style="display:inline; width:25%" class="form-control" placeholder="Enter a" id="ax"> X <i class="fa fa-bars mr-1 ml-1"  aria-hidden="true"></i><input type="number" style="display:inline; width:25%" class="form-control" placeholder="Enter b" id="bx"> (mod <input style="display:inline; width:25%" type="number" class="form-control" placeholder="Enter n" id="nx">) </p>
 		<p class="text-center"> SOLVE <span id="axText"> </span>X <i class="fa fa-bars mr-1 ml-1" aria-hidden="true"></i> <span id="bxText"> </span> (mod <span id="nxText"> </span>) </p>
-	
+
 		<center><button type="button" class="btn btn-dark text-center" id="solve">Solve </button> </center>
-		
-	</div>	
+
+	</div>
 </div>
-<div class="row "> 
+<div class="row ">
+	<div class="col-12">
+	   <h5 style="display:none" class="text-center equ_res_wrapper"> The results are: <span id="equations_results"> </span></h5 >
+  </div>
+
+</div>
+</div>
+</section>
+
+<section id="section11">
+
+<div class="container">
+<div class="row">
+	<div class="col-12">
+		<h2 class="text-center"> Modulo of number</h2>
+	</div>
+</div>
+<div class="row">
+	<div class="col-12 col-md-9">
+		<p class="text-center">
+      <input type="number" style="display:inline; width:25%" class="form-control" placeholder="Enter a" id="aModulo"/> X
+      (mod <input style="display:inline; width:25%" type="number" class="form-control" placeholder="Enter n" id="mModulo">)
+
+    </p>
+		<p class="text-center" id="moduloResultP">  <span id="aModuloText"> </span> (mod <span id="mModuloText"> </span>)
+      <i class="fa fa-bars mr-1 ml-1" aria-hidden="true"></i>   <span id="moduloResultText"> </span>
+    </p>
+
+		<center><button type="button" class="btn btn-dark text-center" id="solve_modulo">Solve </button> </center>
+
+	</div>
+
+  <div class="col-12 col-md-3">
+    <button type="button" class="btn btn-dark text-light" id="try18_4"> Try 18 (mode 4)</button>
+  </div>
+</div>
+<div class="row ">
 	<div class="col-12">
 	<h5 style="display:none" class="text-center equ_res_wrapper"> The results are: <span id="equations_results"> </span></h5 >
 </div></div>
@@ -118,45 +157,46 @@ Modular arithmetic
 	<div class="row">
 		<div class="col-12">
 			<h2 class="text-center">Prime numbers</h2>
-			<p class="text-center"> From <input min="2" type="number" style="display:inline; width:10%" class="form-control" placeholder="Start" id="prime_start"> To  <input type="number" style="display:inline; width:10%" class="form-control" placeholder="End" id="prime_end"> </p>
+			<p class="text-center"> From <input min="2" type="number" style="display:inline; width:25%" class="form-control" placeholder="Start" id="prime_start"> To  <input type="number" style="display:inline; width:25%" class="form-control" placeholder="End" id="prime_end"> </p>
 			<center><button type="button" class="btn btn-dark text-center" id="show_prime">Show </button> </center>
 			<div class="flex-container primes_flex">
 			</div>
-		</div>	
+		</div>
 	</div>
 </div>
 </section>
+
 <section id="section3">
 
 <div class="container">
 <div class="row">
 	<div class="col-12">
 		<h2 class="text-center">Extended euclid</h2>
-	</div>	
+	</div>
 </div>
 
 <form >
- 
+
 	<div class="row">
-	<div  class="col-md-4 col-6"> 
+	<div  class="col-md-4 col-6">
   <div class="form-group">
     <label for="a">A:</label>
     <input type="number" class="form-control" placeholder="Enter a" id="a">
   </div>
   </div>
-  
+
 	<div  class="col-md-4 col-6">
   <div class="form-group">
     <label for="B">B:</label>
     <input type="number" class="form-control" placeholder="Enter B" id="b">
   </div>
   </div>
-  
+
 	<div class=" col-md-4 mt-5 col-12">
 		<button type="button" class="btn btn-dark text-center" id="calc">Show extended euclidean</button>
-	</div>	
+	</div>
   </div>
-  
+
 </form>
 
   <table class="table table-light table-striped">
@@ -183,18 +223,18 @@ Modular arithmetic
 <div class="row">
 	<div class="col-12">
 		<h2 class="text-center">Euler's phi</h2>
-	</div>	
+	</div>
 </div>
 <form >
 <div class="row">
-	<div  class="col-md-6 col-6"> 
+	<div  class="col-md-6 col-6">
   <div class="form-group">
     <label for="e">E:</label>
     <input type="number" class="form-control" placeholder="Enter e" id="e">
   </div>
   </div>
-  
-	
+
+
   </div>
 </form>
 <div class="row">
@@ -205,12 +245,37 @@ Modular arithmetic
 </div>
 </section>
 
+<section class="bg-dark">
+  <div class="container">
+  	<div class="row">
+  		<div class="col-12">
+  			<h2 class="text-center">Power of element</h2>
+  			<p class="text-center">  Q <input min="2" type="number" style="display:inline; width:25%" class="form-control" placeholder="Q" id="power_i">
+        </p>
+        <p class="text-center"> N  <input type="number" style="display:inline; width:25%" class="form-control" placeholder="N" id="power_n"> </p>
+  			<center><button type="button" class="btn btn-primary mb-5 text-center" id="show_powers">Show powers of element </button> </center>
+
+  		</div>
+  	</div>
+    <div class="row" id="power_table">
+      <div class="col-12">
+        <table class="table table-dark">
+            <tbody>
+              <tr id="pwr_row_1"><td > i </td>  </tr>
+              <tr id="pwr_row_2"><td> <span   id="power_i_txt"> </span>^i  mod <span id="power_n_txt"></span> </td>  </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
 
 
-
-  <script>
-  let res = [];
+<script>
+let res = [];
 let temp_res,_d,_x,_y,d,x,y;
+let ax,bx,nx;
+
 let extended_euclidean = function(a,b){
   if(b==0)
     return [a,1,0];
@@ -222,9 +287,9 @@ let extended_euclidean = function(a,b){
   x = _y;
   y= _x - ( parseInt(a/b) * _y);
   res.push([a,b,parseInt(a/b),d,x,y]);
-  
+
   return [d,x,y];
-  
+
 }
 let gcd = function(a,b){
 	if(b==0)
@@ -244,23 +309,33 @@ let eulerPhi = function(a){
 	}
 	return res;
 }
+
+let find_modulo = function(a_mm,n_mm){
+  let res_mm = a_mm;
+  if(a_mm < 0 ){
+    while(a_mm < 0){
+      a_mm += n_mm;
+    }
+  }
+  while(a_mm > n_mm){
+    a_mm -= n_mm;
+  }
+  res_mm = a_mm;
+  return res_mm;
+}
+
 $(".gcdRes").hide();
+$("#moduloResultP").hide();
 $("#calc").click(function(){
 	res = [];
 	$(".res").remove();
-	
 	extended_euclidean($("#a").val(),$("#b").val());
-	
 	for(let i=0;i <res.length;i++){
-
 	  let row = '<tr class="res"><td>' + res[i][0] +" </td><td>" + res[i][1] +" </td><td>" + res[i][2] +" </td><td>" + res[i][3] +" </td><td>" + res[i][4] +" </td><td>" + res[i][5] +" </td>  </tr>";
-		
-		
 		$(".results").prepend(row);
 	}
 	$("#gcd").html("(" +res[res.length - 1][0] + " * " + res[res.length - 1][4] +  ") + (" +res[res.length - 1][1] + "*" + res[res.length - 1][5]+ ")  = " +  gcd($("#a").val(),$("#b").val()));
 	$(".gcdRes").show();
-	
 });
 
 $("#e").keyup(function(){
@@ -271,7 +346,36 @@ $("#e").keyup(function(){
 	$("#eulerResult").html(results.join(", "));
 })
 
-let ax,bx,nx;
+
+$("#solve_modulo").click(function(){
+
+  let a_mm = parseInt($("#aModulo").val());
+  let original_a = a_mm;
+  let n_mm = parseInt($("#mModulo").val());
+
+  res_mm = find_modulo(a_mm,n_mm);
+  $("#mModuloText").html(n_mm);
+  $("#aModuloText").html(original_a);
+  $("#moduloResultText").html(res_mm);
+  $("#moduloResultP").show();
+
+})
+$("#try18_4").click(function(){
+
+    let a_mm = 18 ;
+    let original_a = a_mm;
+    let n_mm = 4;
+    let res_mm = a_mm;
+    $("#aModulo").val(a_mm);
+    $("#mModulo").val(n_mm);
+    res_mm = find_modulo(a_mm,n_mm);
+    $("#mModuloText").html(n_mm);
+    $("#aModuloText").html(original_a);
+    $("#moduloResultText").html(res_mm);
+    $("#moduloResultP").show();
+
+})
+
 
 $("#ax").keyup(function(){
 	$("#axText").html($(this).val());
@@ -294,7 +398,7 @@ $("#solve").click(function(){
 	let d,x2,y2,x0;
 	let results = [];
 	d = gcd_ext[0]; x2 = gcd_ext[1]; y2 = gcd_ext[2];
-	
+
 	if(b%d == 0){
 		x0= (x2 * (b/d) ) % n;
 		while(x0 < 0){
@@ -310,8 +414,9 @@ $("#solve").click(function(){
 		$("#equations_results").html(results.join(", "));
 	}
 	$(".equ_res_wrapper").show();
-	
+
 })
+
 let is_prime = function(number){
 	 for (let i = 2; i < number; i++) {
         if (number % i == 0 && i != number) return false;
@@ -335,31 +440,45 @@ $("#show_prime").click(function(){
 	primes = [];
 	let s = parseInt($("#prime_start").val());
 	let e = parseInt($("#prime_end").val());
-	
 	if(s < 2){
 		$("#prime_start").val(2);
 		s=2;
 	}
-		 
-
-	console.log(s);
-	console.log(e);
-
 	for(let i=s; i<=e;i++){
-		console.log(i);
 		if(is_prime(i)){
 			primes.push(i);
 		}
 	}
-		
 	primes.forEach(function(item){
 		$(".primes_flex").append('<div class="prime_num"> ' +item+ "</div>");
 	});
-	
+
 })
-//$("#prime_start").
-//		$("#prime_end").
-	//	$("#show_prime").
-		
+
+$("#show_powers").click(function(){
+  let n = $("#power_n").val();
+  let i = $("#power_i").val();
+  $("#power_i_txt").html(i);
+  $("#power_n_txt").html(n);
+  for(let j =0;j<10;j++){
+      $("#pwr_row_1").append("<tr> " +j + " </td>");
+      $("#pwr_row_2").append("<tr> " +find_modulo(Math.pow(i,j) ,n) + " </td>");
+  }
+})
+
+
+//default power table
+let n_p = 7;
+let i_p = 3;
+
+$("#power_i").val(i_p);
+$("#power_n").val(n_p);
+$("#power_i_txt").html(i_p);
+$("#power_n_txt").html(n_p);
+for(let j =0;j<10;j++){
+    $("#pwr_row_1").append("<td> " + j + " </td>");
+    $("#pwr_row_2").append("<td> " +find_modulo(Math.pow(i_p,j) ,n_p) + " </td>");
+}
   </script>
 </body>
+</html>
